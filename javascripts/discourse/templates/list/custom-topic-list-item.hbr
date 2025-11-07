@@ -1,3 +1,8 @@
+{{!-- DEPRECATED: Raw .hbr templates are no longer supported in Discourse 3.x --}}
+{{!-- This file needs to be converted to .gjs Glimmer component format --}}
+{{!-- Topic list architecture has been completely rewritten --}}
+{{!-- See MODERNIZATION_NOTES.md for migration guide --}}
+
 {{!-- this custom template is shared by mobile and desktop and is called for in common/header.html --}}
 
 {{#if bulkSelectEnabled}}

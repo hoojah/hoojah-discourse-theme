@@ -1,12 +1,18 @@
 <!-- Custom sidebar widget -->
 
-<script type="text/discourse-plugin" version="0.8">
+<script type="text/discourse-plugin" version="1.14">
+  // NOTE: This sidebar widget uses older connector patterns
+  // May need updates for optimal Discourse 3.x compatibility
+  // Consider using modern plugin outlets if issues occur
+
   const ajax = require('discourse/lib/ajax').ajax;
 
   // script wont run unless user is logged in
   if (api.getCurrentUser() === null) return false;
 
   api.registerConnectorClass('discovery-below', 'sidebar', {
+    pluginId: 'hoojah-theme', // Added for proper identification
+
     setupComponent(args, component) {
       let username = component.get('currentUser.username');
       ajax("/u/" + username + "/summary.json").then (function(result){

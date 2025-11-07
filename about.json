@@ -2,6 +2,8 @@
   "name": "Hoojah Discourse Theme",
   "about_url": "https://github.com/hoojah/hoojah-discourse-theme.git",
   "license_url": "https://github.com/hoojah/hoojah-discourse-theme/blob/main/LICENSE",
+  "minimum_discourse_version": "2.6.0",
+  "maximum_discourse_version": "2.9.999",
   "assets": {
   },
   "color_schemes": {
