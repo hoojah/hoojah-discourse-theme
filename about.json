@@ -1,26 +1,23 @@
 {
-  "name": "Hoojah Discourse Theme",
-  "about_url": "https://github.com/hoojah/hoojah-discourse-theme.git",
+  "name": "Hoojah",
+  "about_url": "https://github.com/hoojah/hoojah-discourse-theme",
   "license_url": "https://github.com/hoojah/hoojah-discourse-theme/blob/main/LICENSE",
-  "minimum_discourse_version": "2.6.0",
-  "maximum_discourse_version": "2.9.999",
-  "assets": {
-  },
+  "authors": "Hoojah Team",
+  "theme_version": "1.0.0",
+  "minimum_discourse_version": "3.1.0",
+  "assets": {},
   "color_schemes": {
     "Hoojah": {
       "primary": "343A40",
       "secondary": "ffffff",
       "tertiary": "415DE6",
       "quaternary": "415DE6",
-      "header_background": "FFFFFF",
+      "header_background": "ffffff",
       "header_primary": "343A40",
       "highlight": "415DE6",
-      "danger": "f8745c",
-      "success": "415DE6",
+      "danger": "e45735",
+      "success": "3AB54A",
       "love": "E1306C"
     }
-  },
-  "modifiers": {
-    "serialize_topic_excerpts": true
   }
 }

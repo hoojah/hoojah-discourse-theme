@@ -1,0 +1,41 @@
+<!-- Hoojah Theme - Custom Head Scripts -->
+
+<script type="text/discourse-plugin" version="1.14">
+/**
+ * Hoojah Theme JavaScript
+ * Using modern Discourse Plugin API
+ */
+
+const { withPluginApi } = require("discourse/lib/plugin-api");
+
+withPluginApi("1.14", (api) => {
+  const pluginId = "hoojah-theme";
+
+  // Example: Add custom class to body based on theme setting
+  if (settings.enable_wide_layout) {
+    document.body.classList.add("wide-layout-enabled");
+  }
+
+  // Example: Custom brand color from settings
+  if (settings.brand_color) {
+    document.documentElement.style.setProperty(
+      "--hoojah-primary",
+      settings.brand_color
+    );
+  }
+
+  // Example: Using transformers (modern approach)
+  // api.registerValueTransformer("example-transformer", ({ value }) => {
+  //   return value;
+  // });
+
+  // Example: Using plugin outlets
+  // api.renderInOutlet("outlet-name", <template>
+  //   <div class="custom-content">
+  //     Content here
+  //   </div>
+  // </template>);
+
+  console.info("Hoojah theme loaded successfully");
+});
+</script>

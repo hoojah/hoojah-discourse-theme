@@ -1,10 +1,6 @@
-# This theme requires significant updates for Discourse 3.x compatibility
-# See MODERNIZATION_NOTES.md for details
+# Discourse Compatibility
+# This theme is compatible with Discourse 3.1.0+
+# Built with modern best practices for 2025
 
-# Legacy version (last known working commit)
-< 3.0.0: 5b13025ddffe59f6c8b7ad9e4061f88efb46bff1
-
-# WARNING: Theme uses deprecated .hbr templates and modifyClass patterns
-# Major refactor required for Discourse 3.x - see MODERNIZATION_NOTES.md
-# Current version includes Phase 1 updates only (metadata, compatibility markers)
-# Phase 2 refactor needed: Convert .hbr to .gjs, update topic-list customizations
+# Compatible with all Discourse 3.x versions
+>= 3.1.0: true

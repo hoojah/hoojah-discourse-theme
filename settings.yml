@@ -1,18 +1,32 @@
-sidebar_alignment: 
-  type: enum
-  default: left
-  choices: 
-    - right
-    - left
+# Hoojah Theme Settings
+# Configure your theme appearance and behavior
 
-sidebar_show_intro: 
-   type: bool 
-   default: true
+# Brand Settings
+brand_logo:
+  type: upload
+  default: ""
+  description: "Upload your custom logo (replaces default Discourse logo)"
 
-sidebar_show_likes:
-   type: bool 
-   default: true
+brand_color:
+  type: string
+  default: "#415DE6"
+  description: "Primary brand color (hex color code)"
 
-sidebar_show_badges: 
-   type: bool 
-   default: true
+# Typography
+enable_custom_fonts:
+  type: bool
+  default: false
+  description: "Enable custom font styling"
+
+# Layout Options
+enable_wide_layout:
+  type: bool
+  default: false
+  description: "Enable wider content layout for desktop"
+
+# Custom CSS/JS
+custom_css:
+  type: string
+  default: ""
+  textarea: true
+  description: "Add custom CSS to override theme styles"

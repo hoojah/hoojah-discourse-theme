@@ -1,144 +1,261 @@
-# Hoojah Theme for Discourse
+# Hoojah Discourse Theme
 
-A fork of Fakebook theme for Discourse.
+A modern, clean theme for Discourse built with 2025 best practices.
 
-> ⚠️ **COMPATIBILITY NOTICE**: This theme is currently compatible with Discourse 2.6.x - 2.9.x only.
-> It requires significant updates to work with Discourse 3.x. See [MODERNIZATION_NOTES.md](MODERNIZATION_NOTES.md) for details.
-
-## What is Hoojah?
+## About Hoojah
 
 Hoojah is an online ecosystem for Malaysians to engage in thoughtful discussions, understand different points of view, and help with collaborative decision-making.
 
-The Hoojah ecosystem comprises of these main principles:
+The Hoojah ecosystem comprises these main principles:
 
-- Transparency through open source technologies and democratic decision making
-- Help Malaysia catch up with the rest of the world in the effort to digitalise everyday life by building tools to enable people to connect and local businesses grow.
-- Educate Malaysians to normalise making data driven decisions
+- **Transparency** through open source technologies and democratic decision making
+- **Digitalization** - Help Malaysia catch up with the rest of the world by building tools to connect people and grow local businesses
+- **Data-driven decisions** - Educate Malaysians to normalize making data-driven decisions
 
-The Hoojah ecosystem has four main layers:
+### The Hoojah Ecosystem
 
-- Hoojah:**Borak** - social messaging app based on Telegram
-- Hoojah:**Bincang** - community platform based on Discourse
-- Hoojah:**BalaiRaya** - a dedicated platform for big issues discussions.
-- Hoojah:**Bina** - API services to integrate other applications or services with Hoojah
-
-This repository will host the theme for Hoojah:Bincang.
+- **Hoojah:Borak** - Social messaging app based on Telegram
+- **Hoojah:Bincang** - Community platform based on Discourse (this theme)
+- **Hoojah:BalaiRaya** - Platform for big issues discussions
+- **Hoojah:Bina** - API services to integrate applications with Hoojah
 
 ## Features
 
-- **Facebook-style Topic List**: Card-based layout with avatars, excerpts, and engagement metrics
-- **Custom Sidebar Widget**: Shows user stats, badges, and welcome messages
-- **Hoojah Brand Colors**: Custom color scheme matching Hoojah identity
-- **Responsive Design**: Optimized for both desktop and mobile viewing
-- **Configurable Settings**: Toggle sidebar elements via theme settings
+✨ **Modern Architecture**
+- Built with Discourse 3.x compatibility
+- Uses latest Plugin API 1.14
+- No deprecated patterns (no .hbr files)
+- Modern Glimmer component approach
+
+🎨 **Clean Design**
+- Hoojah brand colors
+- Responsive layout (mobile & desktop)
+- Smooth animations and transitions
+- Touch-optimized for mobile
+
+⚙️ **Customizable**
+- Theme settings for easy customization
+- Custom logo upload
+- Adjustable brand colors
+- Wide layout option
+- Custom CSS support
+
+🚀 **Performance**
+- Optimized CSS
+- Modern best practices
+- Minimal JavaScript
+- Fast loading times
 
 ## Installation
 
-### For Discourse 2.6.x - 2.9.x
+### Requirements
+
+- Discourse 3.1.0 or higher
+- Admin access to your Discourse instance
+
+### Install from Git Repository
 
 1. Go to your Discourse Admin panel
 2. Navigate to **Customize → Themes**
 3. Click **Install** and choose **From a git repository**
-4. Enter the repository URL: `https://github.com/hoojah/hoojah-discourse-theme.git`
+4. Enter the repository URL:
+   ```
+   https://github.com/hoojah/hoojah-discourse-theme.git
+   ```
 5. Click **Install**
+6. Set as default theme or make it selectable by users
 
-### For Discourse 3.x+
+### Manual Installation
 
-**This theme is not yet compatible with Discourse 3.x.** Major refactoring is required due to:
-- Removal of raw Handlebars template support (.hbr files)
-- Complete rewrite of topic-list architecture
-- Migration to Glimmer components (.gjs format)
-
-See [MODERNIZATION_NOTES.md](MODERNIZATION_NOTES.md) for detailed migration requirements.
+1. Download this repository as a ZIP file
+2. Go to **Admin → Customize → Themes**
+3. Click **Install → From a file**
+4. Upload the ZIP file
+5. Configure and activate
 
 ## Configuration
 
-After installation, you can configure the theme in **Admin → Customize → Themes → Hoojah Theme → Edit CSS/HTML**:
+After installation, configure the theme in **Admin → Customize → Themes → Hoojah → Settings**:
 
 ### Available Settings
 
-- `sidebar_alignment`: Position sidebar on left or right (default: left)
-- `sidebar_show_intro`: Show/hide welcome message (default: true)
-- `sidebar_show_likes`: Show/hide likes statistics (default: true)
-- `sidebar_show_badges`: Show/hide user badges (default: true)
+| Setting | Type | Default | Description |
+|---------|------|---------|-------------|
+| `brand_logo` | Upload | - | Custom logo to replace default Discourse logo |
+| `brand_color` | String | #415DE6 | Primary brand color (hex code) |
+| `enable_custom_fonts` | Boolean | false | Enable custom font styling |
+| `enable_wide_layout` | Boolean | false | Wider content layout for desktop |
+| `custom_css` | Text | - | Add custom CSS to override styles |
 
-## Development Status
+### Color Scheme
 
-### Current Version (Phase 1 - January 2025)
+The default Hoojah color scheme includes:
 
-✅ Compatibility markers updated
-✅ Plugin API version updated to 1.14
-✅ Deprecation warnings added to code
-✅ Documentation for breaking changes created
+- **Primary**: #343A40 (Dark gray)
+- **Tertiary**: #415DE6 (Hoojah blue)
+- **Love**: #E1306C (Pink accent)
+- **Secondary**: #FFFFFF (White)
 
-### Roadmap
+You can customize these in **Admin → Customize → Colors**.
 
-**Phase 2 - Discourse 3.x Compatibility** (Not yet started)
-- [ ] Convert .hbr templates to .gjs Glimmer components
-- [ ] Rewrite topic list customization using new APIs
-- [ ] Update sidebar widget to modern patterns
-- [ ] Replace modifyClass with plugin outlets/transformers
-- [ ] Comprehensive testing on Discourse 3.5.x
+## Development
 
-**Phase 3 - Optimization** (Future)
-- [ ] Performance improvements
-- [ ] Enhanced mobile experience
-- [ ] Additional customization options
-- [ ] Automated testing
+### Project Structure
 
-## Technical Details
+```
+hoojah-discourse-theme/
+├── common/
+│   ├── common.scss          # Shared styles
+│   └── head_tag.html        # JavaScript & customizations
+├── desktop/
+│   └── desktop.scss         # Desktop-specific styles
+├── mobile/
+│   └── mobile.scss          # Mobile-specific styles
+├── locales/
+│   └── en.yml               # English translations
+├── assets/
+│   └── images/              # Theme images
+├── about.json               # Theme metadata
+├── settings.yml             # Theme settings definition
+├── .discourse-compatibility # Version compatibility
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
-### Technologies Used
-- SCSS (styling)
-- JavaScript (Discourse Plugin API 1.14)
-- Handlebars templates (deprecated, needs migration to .gjs)
-- CSS Grid for responsive layout
+### Building Components
 
-### Browser Support
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers on iOS 16.7+ and Android
+This theme uses modern Discourse development practices:
 
-### Known Issues
-- ⚠️ Uses deprecated raw template system (.hbr files)
-- ⚠️ Uses `modifyClass` which is discouraged
-- ⚠️ Not compatible with Discourse 3.x without major refactor
+#### Plugin API (v1.14)
 
-See [MODERNIZATION_NOTES.md](MODERNIZATION_NOTES.md) for complete technical details.
+Use the `withPluginApi` pattern for JavaScript customizations:
+
+```javascript
+const { withPluginApi } = require("discourse/lib/plugin-api");
+
+withPluginApi("1.14", (api) => {
+  // Your customizations here
+});
+```
+
+#### Transformers
+
+Use transformers for modifying values and behavior:
+
+```javascript
+api.registerValueTransformer("transformer-name", ({ value }) => {
+  return modifiedValue;
+});
+```
+
+#### Plugin Outlets
+
+Inject content using plugin outlets:
+
+```javascript
+api.renderInOutlet("outlet-name", <template>
+  <div>Your content</div>
+</template>);
+```
+
+### Best Practices
+
+1. **Use Plugin Outlets** over `modifyClass` when possible
+2. **Use Transformers** for value modifications
+3. **Avoid deprecated APIs** (raw templates, old patterns)
+4. **Test on multiple devices** (desktop, mobile, tablet)
+5. **Keep JavaScript minimal** for performance
+6. **Use CSS variables** for theming
+7. **Follow Discourse coding standards**
+
+### Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/hoojah/hoojah-discourse-theme.git
+   cd hoojah-discourse-theme
+   ```
+
+2. Install on your local Discourse instance via Admin UI
+
+3. Make changes to files
+
+4. Refresh your browser to see changes (Discourse auto-compiles)
+
+5. Commit and push changes:
+   ```bash
+   git add .
+   git commit -m "Description of changes"
+   git push origin main
+   ```
+
+## Compatibility
+
+- **Minimum Discourse Version**: 3.1.0
+- **Tested On**: Discourse 3.5.x
+- **Browser Support**:
+  - Chrome (latest)
+  - Firefox (latest)
+  - Safari (latest)
+  - Edge (latest)
+  - Mobile browsers (iOS 16.7+, Android)
 
 ## Contributing
 
-We welcome contributions! If you'd like to help modernize this theme for Discourse 3.x:
+We welcome contributions! Here's how you can help:
 
-1. Review [MODERNIZATION_NOTES.md](MODERNIZATION_NOTES.md) for technical requirements
-2. Fork the repository
-3. Create a feature branch
-4. Make your changes
-5. Submit a pull request
+1. **Report Issues**: Found a bug? [Open an issue](https://github.com/hoojah/hoojah-discourse-theme/issues)
+2. **Suggest Features**: Have an idea? Share it in discussions
+3. **Submit PRs**: Fork, make changes, and submit a pull request
 
-Priority areas:
-- Converting .hbr templates to .gjs format
-- Implementing new topic-list customization APIs
-- Testing on Discourse 3.x instances
+### Contribution Guidelines
+
+- Follow existing code style
+- Test your changes thoroughly
+- Update documentation as needed
+- Keep commits focused and well-described
+- Be respectful and collaborative
 
 ## Support
 
-For issues and questions:
-- Check [MODERNIZATION_NOTES.md](MODERNIZATION_NOTES.md) for known issues
-- Open an issue on GitHub
-- Visit [Discourse Meta](https://meta.discourse.org/) for Discourse development help
+- **Documentation**: This README and code comments
+- **Issues**: [GitHub Issues](https://github.com/hoojah/hoojah-discourse-theme/issues)
+- **Discourse Meta**: [Developer Category](https://meta.discourse.org/c/dev/)
+- **Community**: Join Hoojah:Bincang for discussions
+
+## Roadmap
+
+### Version 1.1 (Planned)
+- [ ] Additional plugin outlet integrations
+- [ ] More theme settings options
+- [ ] Enhanced mobile experience
+- [ ] Dark mode variant
+
+### Version 1.2 (Future)
+- [ ] Component library
+- [ ] Advanced customization options
+- [ ] Performance optimizations
+- [ ] Accessibility improvements
 
 ## License
 
-GNU General Public License v2.0 - see [LICENSE](LICENSE) file for details.
+GNU General Public License v2.0
+
+See [LICENSE](LICENSE) file for full details.
 
 ## Credits
 
-- Original **Fakebook** theme by the Discourse community
-- Adapted for **Hoojah** by the Hoojah team
-- Maintained for Malaysian community engagement
+- **Created by**: Hoojah Team
+- **Maintained by**: Hoojah Community
+- **Built for**: Malaysian thoughtful discourse
+- **Powered by**: [Discourse](https://www.discourse.org/)
 
 ---
 
+**Version**: 1.0.0
 **Last Updated**: January 2025
-**Discourse Compatibility**: 2.6.x - 2.9.x
-**Status**: Legacy (Phase 2 modernization needed for 3.x)
+**Discourse Compatibility**: 3.1.0+
+**Status**: Active Development
+
+Made with ❤️ for the Malaysian community

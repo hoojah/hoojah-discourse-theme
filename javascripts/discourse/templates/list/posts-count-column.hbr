@@ -1,7 +1,0 @@
-{{!-- DEPRECATED: Raw .hbr templates no longer supported in Discourse 3.x --}}
-{{!-- See MODERNIZATION_NOTES.md for migration guide --}}
-
-<a href class='posts-map badge-posts {{view.likesHeat}}'>
-  {{raw-plugin-outlet name="topic-list-before-reply-count"}}
-  {{number topic.replyCount noTitle="true"}} {{d-icon "far-comment"}}
-</a>
